@@ -6,7 +6,11 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-module.exports = {
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const configs = {
   siteName: 'Gridsome',
   plugins: [],
   css: {
@@ -27,3 +31,10 @@ module.exports = {
     },
   },
 };
+
+if (process.env.SITE_URL) {
+  configs.plugins.push({ use: '@gridsome/plugin-sitemap' });
+  configs.siteUrl = process.env.SITE_URL;
+}
+
+module.exports = configs;
