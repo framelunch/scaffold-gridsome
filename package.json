@@ -1,5 +1,6 @@
 {
-  "name": "gridsome-test",
+  "name": "scaffold-gridsome",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "gridsome build",
