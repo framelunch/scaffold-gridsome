@@ -39,6 +39,7 @@
     "sanitize.css": "^8.0.0"
   },
   "devDependencies": {
+    "@gridsome/plugin-google-analytics": "^0.1.0",
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
     "autoprefixer": "^9.4.10",
     "eslint": "^5.15.1",

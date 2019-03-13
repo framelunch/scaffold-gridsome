@@ -37,4 +37,11 @@ if (process.env.SITE_URL) {
   configs.siteUrl = process.env.SITE_URL;
 }
 
+if (process.env.GOOGLE_ANALYTICS) {
+  configs.plugins.push({
+    use: '@gridsome/plugin-google-analytics',
+    options: { id: process.env.GOOGLE_ANALYTICS },
+  });
+}
+
 module.exports = configs;
