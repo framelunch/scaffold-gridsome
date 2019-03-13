@@ -7,9 +7,13 @@
     "explore": "gridsome explore",
     "lint": "run-s lint:*",
     "lint:script": "eslint --ext .js 'src'",
-    "lint:vue": "eslint --ext .vue 'src'",
+    "lint:style": "stylelint './src/**/*.css'",
+    "lint:vue": "run-s lint:vue:*",
+    "lint:vue:script": "eslint --ext .vue 'src'",
+    "lint:vue:style": "stylelint --config stylelint.config.vue.js './src/**/*.vue'",
     "fix": "run-s fix:*",
     "fix:script": "eslint --fix 'src/**/*.js'",
+    "fix:style": "stylelint --fix 'src/**/*.css'",
     "fix:vue": "run-s fix:vue:*",
     "fix:vue:prettier": "prettier --write 'src/**/*.vue'",
     "fix:vue:eslint": "eslint --fix 'src/**/*.vue'"
@@ -18,6 +22,7 @@
     "gridsome": "^0.5.0"
   },
   "devDependencies": {
+    "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
     "eslint": "^5.15.1",
     "eslint-config-framelunch": "framelunch/eslint-config-framelunch",
     "eslint-config-prettier": "^4.1.0",
@@ -27,6 +32,9 @@
     "eslint-plugin-vue": "^5.2.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
+    "stylelint": "^9.10.1",
+    "stylelint-config-framelunch": "framelunch/stylelint-config-framelunch",
+    "stylelint-config-prettier": "^5.0.0",
     "vue-eslint-parser": "^6.0.3"
   }
 }
