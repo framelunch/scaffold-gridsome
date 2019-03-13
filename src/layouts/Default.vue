@@ -22,10 +22,6 @@ query {
 </static-query>
 
 <style lang="postcss">
-:root {
-  --padding-h: 20px;
-}
-
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
@@ -34,7 +30,7 @@ body {
 }
 
 .layout {
-  max-width: 760px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--padding-h);
 }

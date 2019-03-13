@@ -1,0 +1,6 @@
+@import "libraries-frontend-framelunch/css/_variables.css";
+
+:root {
+    --padding-h: 20px;
+    --max-width: 1180px;
+}
