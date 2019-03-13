@@ -4,9 +4,29 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "lint": "run-s lint:*",
+    "lint:script": "eslint --ext .js 'src'",
+    "lint:vue": "eslint --ext .vue 'src'",
+    "fix": "run-s fix:*",
+    "fix:script": "eslint --fix 'src/**/*.js'",
+    "fix:vue": "run-s fix:vue:*",
+    "fix:vue:prettier": "prettier --write 'src/**/*.vue'",
+    "fix:vue:eslint": "eslint --fix 'src/**/*.vue'"
   },
   "dependencies": {
     "gridsome": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-framelunch": "framelunch/eslint-config-framelunch",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-gridsome": "^1.1.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-vue": "^5.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.4",
+    "vue-eslint-parser": "^6.0.3"
   }
 }
