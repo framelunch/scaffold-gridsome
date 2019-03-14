@@ -12,7 +12,6 @@ dotenv.config();
 
 const configs = {
   siteName: 'Gridsome',
-  plugins: [],
   css: {
     loaderOptions: {
       postcss: {
@@ -30,6 +29,31 @@ const configs = {
       },
     },
   },
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
+      plugins: [
+        // ...global plugins
+      ],
+    },
+  },
+
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: '_posts/blog/**/*.md',
+        typeName: 'Post',
+        remark: {
+          plugins: [
+            // ...local plugins
+          ],
+        },
+      },
+    },
+  ],
 };
 
 if (process.env.SITE_URL) {

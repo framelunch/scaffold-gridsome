@@ -17,10 +17,27 @@
   </Layout>
 </template>
 
+<page-query>
+query posts {
+  allPost {
+    edges {
+      node {
+        path
+        title
+        date
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
 export default {
   metaInfo: {
     title: 'Hello, world!',
+  },
+  mounted() {
+    console.log(this.$page.allPost.edges);
   },
 };
 </script>
